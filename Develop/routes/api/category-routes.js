@@ -5,30 +5,38 @@ const { Category, Product } = require("../../models");
 
 router.get("/", (req, res) => {
   // find all categories
-  Category.findAll({})
+  // be sure to include its associated Products
+  Category.findAll({
+    include: [Product],
+  })
     .then((categories) => {
       return res.json(categories);
     })
     .catch((error) => {
       return res.status(500).json(error.message);
     });
-  //!! be sure to include its associated Products
 });
 
+//find individual category
 router.get("/:id", (req, res) => {
-  // find one category by its `id` value
+  //be sure to include its associated Products
   Category.findOne({
+    // find one category by its `id` value
     where: { id: req.params.id },
-    //imported Product at top
-    include: [Product],
+    //imported Product at top, will show products associated with this category
+    include: [
+      {
+        model: Product,
+        attributes: ["id", "product_name", "price", "stock", "category_id"],
+      },
+    ],
   })
-    .then((categories) => {
+    .then((category) => {
       return res.json(category);
     })
     .catch((error) => {
       return res.status(500).json(error.message);
     });
-  //!! be sure to include its associated Products
 });
 
 router.post("/", (req, res) => {
@@ -44,11 +52,14 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   // update a category by its `id` value
-  Category.update(req.body, {
-    where: { id: req.params.id },
-  })
-    .then((category) => {
-      return res.json(category);
+  Category.update(
+    { category_name: req.body.category_name },
+    {
+      where: { id: req.params.id },
+    }
+  )
+    .then((result) => {
+      return res.json(result);
     })
     .catch((error) => {
       return res.status(500).json(error.message);
@@ -57,11 +68,11 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   // delete a category by its `id` value
-  Category.destroy(req.body, {
+  Category.destroy({
     where: { id: req.params.id },
   })
-    .then((category) => {
-      return res.json(category);
+    .then((result) => {
+      return res.json(result);
     })
     .catch((error) => {
       return res.status(500).json(error.message);
