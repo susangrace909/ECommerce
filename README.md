@@ -14,7 +14,7 @@
 ## Repository Link
 
 - Repository can be found at: <br />
-  [GitHub](https://github.com/susangrace909/EmployeeTracker.git) <br />
+  [GitHub](https://github.com/susangrace909/ECommerce.git) <br />
 
 ## Video of FUnctionality:
 
