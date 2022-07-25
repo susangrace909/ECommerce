@@ -18,6 +18,6 @@
 
 ## Video of FUnctionality:
 
-- ![Video of GET all routes](Screencastify.webm)
-- ![Video of GET individual routes](Screencastify.webm)
-- ![Video of POST, PUT, DELETE routes](Screencastify.webm)
+- ![Video of GET all routes](assets/GETall.webm)
+- ![Video of GET individual routes](assets/GETindividual.webm)
+- ![Video of POST, PUT, DELETE routes](assets/PostPutDelete.webm)
