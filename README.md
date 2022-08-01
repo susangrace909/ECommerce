@@ -16,8 +16,7 @@
 - Repository can be found at: <br />
   [GitHub](https://github.com/susangrace909/ECommerce.git) <br />
 
-## Video of FUnctionality:
+## Video of Functionality:
 
-- ![Video of GET all routes](assets/GETall.webm)
-- ![Video of GET individual routes](assets/GETindividual.webm)
-- ![Video of POST, PUT, DELETE routes](assets/PostPutDelete.webm)
+- ![Video in File](assets/Functionality.webm)
+- [Link](https://drive.google.com/file/d/1Ke-i6D_-1_PT01UE449yLXqct9TbG3vn/view?usp=sharing)
